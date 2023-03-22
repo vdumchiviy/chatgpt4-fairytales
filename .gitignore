@@ -1,1 +1,5 @@
 .env
+*pycache*
+*pycache*/*.*
+*pycache*/*.pyc
+*/*.pyc
