@@ -10,7 +10,8 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "src.run_webserver:app"
+                "backend_fastapi.run_webserver:app",
+                "--reload"
             ],
             "jinja": true,
             "justMyCode": true
