@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from src.api.v1.api import api_router
-from src.config.configuration import settings
+from backend_fastapi.api.v1.api import api_router
+from backend_fastapi.config.configuration import settings
 
 
 app = FastAPI(debug=settings.DEBUG)
