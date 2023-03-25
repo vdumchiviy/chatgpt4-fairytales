@@ -1,5 +1,6 @@
 from fastapi import APIRouter
-from .endpoints import server, fairytale
+
+from .endpoints import fairytale, server
 
 api_router = APIRouter()
 

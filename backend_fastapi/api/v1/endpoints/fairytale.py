@@ -1,7 +1,8 @@
-from fastapi import APIRouter
 import openai
-from backend_fastapi.config.configuration import settings
-from backend_fastapi.schemas.fairytale import FairyTaleSetup, FairyTaleStory
+from fastapi import APIRouter
+
+from config.configuration import settings
+from schemas.fairytale import FairyTaleSetup, FairyTaleStory
 
 router = APIRouter()
 
@@ -29,7 +30,8 @@ async def create_new_fairytale(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "user",
-             "content": f"Tell a short story in {language}. Heroes - {hero}. A fairy tale should teach {trend}."}
+             "content": f"Tell a short story in {language}. Heroes - "
+                + f"{hero}. A fairy tale should teach {trend}."}
         ],
     )
     story = completion_resp["choices"][0]["message"]["content"]

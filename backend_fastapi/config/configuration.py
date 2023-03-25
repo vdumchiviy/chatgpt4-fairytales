@@ -7,4 +7,4 @@ class Settings(BaseSettings):
     DEBUG: bool = Field(..., env="DEBUG")
 
 
-settings = Settings()
+settings = Settings()  # type: ignore[call-arg]
