@@ -9,8 +9,9 @@
             "type": "python",
             "request": "launch",
             "module": "uvicorn",
+            "cwd": "${workspaceFolder}/backend_fastapi",
             "args": [
-                "backend_fastapi.run_webserver:app",
+                "run_webserver:app",
                 "--reload"
             ],
             "jinja": true,

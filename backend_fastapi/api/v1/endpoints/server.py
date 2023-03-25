@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from backend_fastapi.schemas.server import ServerShortInfo
 
+from schemas.server import ServerShortInfo
 
 router = APIRouter()
 
