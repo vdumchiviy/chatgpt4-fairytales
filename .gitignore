@@ -3,3 +3,4 @@
 *pycache*/*.*
 *pycache*/*.pyc
 */*.pyc
+frontend_react/node_modules
