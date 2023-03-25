@@ -1,5 +1,7 @@
 # ChatGPT4- Fairy Tales
 ----
+## Backend
+### FastAPI:
 There are links for the backend:
 1. /server/info - information about the server
 2. /fairytale/models - list of possibility AI models
