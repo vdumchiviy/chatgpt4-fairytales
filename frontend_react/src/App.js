@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Header/Header";
+import ApiServerInfo from "./Api/ApiServerInfo";
 
+const headerData = {
+  nav: [
+    { "key": 1, "text": "Home", "link": "index.html" },
+    { "key": 2, "text": "Contacts", "link": "contacts.html" },
+    { "key": 3, "text": "About", "link": "About.html" },
+  ]
+}
+
+const debug = true;
+let apiAddress;
+
+if (debug) {
+  apiAddress = "http://127.0.0.1:8000"
+}
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header data={headerData}></Header>
+      <img className="main-image" src="/images/lisaikolobok.jpg" alt="main-image" title="Lisa i Kolobok" />
+      <p className="text">Settings:</p>
+
+      <ApiServerInfo api_base={apiAddress}></ApiServerInfo>
+    </>
+
   );
 }
 
