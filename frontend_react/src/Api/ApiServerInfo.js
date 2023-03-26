@@ -1,7 +1,11 @@
+import React, { useState, useEffect } from 'react';
+
+
 
 function ApiServerInfo(props) {
 
     const apiAddress = props.api_base + '/server/info';
+    const [serverInfo, setServerInfo] = useState('');
 
     function clickHandler() {
         fetch(apiAddress, {
@@ -12,11 +16,15 @@ function ApiServerInfo(props) {
             }
         })
             .then(response => response.json())
-            .then(response => console.log(response))
+            .then(response => {
+                console.log(response);
+                setServerInfo(response.version);
+            })
     }
     return (
         <>
             <button onClick={clickHandler}>Request to Server:</button>
+            <div>version: {serverInfo} </div>
         </>
     );
 }
