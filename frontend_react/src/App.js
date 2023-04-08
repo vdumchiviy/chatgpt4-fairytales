@@ -1,5 +1,6 @@
 import Header from "./Header/Header";
 import ApiServerInfo from "./Api/ApiServerInfo";
+import ApiFairyTale from "./Api/ApiFairyTale";
 
 const headerData = {
   nav: [
@@ -23,6 +24,9 @@ function App() {
       <p className="text">Settings:</p>
 
       <ApiServerInfo api_base={apiAddress}></ApiServerInfo>
+      <ApiFairyTale api_base={apiAddress}></ApiFairyTale>
+
+
     </>
 
   );

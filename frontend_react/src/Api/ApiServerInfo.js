@@ -10,14 +10,14 @@ function ApiServerInfo(props) {
     function clickHandler() {
         fetch(apiAddress, {
             method: "GET",
-            moe: "no-cors",
+            // mode: "no-cors",
             header: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         })
             .then(response => response.json())
             .then(response => {
-                console.log(response);
+                console.log(response.version);
                 setServerInfo(response.version);
             })
     }
