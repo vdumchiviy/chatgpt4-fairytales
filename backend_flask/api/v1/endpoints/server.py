@@ -1,16 +1,10 @@
 from flask import Blueprint, jsonify
+from backend.config.configuration import server_info
 
 server = Blueprint('server', __name__)
 
 
 @server.route("/info")
 def get_server_short_info():
-    result = jsonify(
-        {
-            "version": "1.0",
-            "last_date": "2023-03-23",
-            "code": 200,
-            "msg": "OK"
-        }
-    )
+    result = jsonify(server_info)
     return result
