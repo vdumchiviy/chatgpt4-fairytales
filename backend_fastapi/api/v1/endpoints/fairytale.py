@@ -1,7 +1,6 @@
 import openai
-from fastapi import APIRouter
-
 from config.configuration import settings
+from fastapi import APIRouter
 from schemas.fairytale import FairyTaleSetup, FairyTaleStory
 
 router = APIRouter()

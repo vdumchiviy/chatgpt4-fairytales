@@ -1,8 +1,7 @@
+from api.v1.endpoints.fairytale import fairytale
+from api.v1.endpoints.server import server
 from flask import Flask
 from flask_cors import CORS
-from api.v1.endpoints.server import server
-from api.v1.endpoints.fairytale import fairytale
-
 
 app = Flask(__name__)
 CORS(

@@ -1,4 +1,5 @@
 import openai
+
 from backend.config.configuration import settings
 from backend.schemas.fairytale import FairyTaleSetup, FairyTaleStory
 

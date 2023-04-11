@@ -2,6 +2,7 @@ import openai
 
 # from config.configuration import settings
 from backend.config.configuration import settings
+
 # from schemas.fairytale import FairyTaleSetup, FairyTaleStory
 
 

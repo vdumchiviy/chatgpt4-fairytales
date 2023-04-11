@@ -1,5 +1,6 @@
+from typing import Any, Dict
+
 from pydantic import BaseSettings, Field
-from typing import Dict, Any
 
 server_info: Dict[str, Any] = {
     "version": "1.1",
