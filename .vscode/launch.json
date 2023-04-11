@@ -5,7 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "FairyTales",
+            "name": "FairyTales: Flask",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            // "cwd": "${workspaceFolder}\\backend_flask",
+            "env": {
+                "FLASK_APP": "backend_flask\\run_webserver.py",
+                "FLASK_DEBUG": "1"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload",
+                "--port",
+                "8000"
+            ],
+            "jinja": true,
+            "justMyCode": true
+        },
+        {
+            "name": "FairyTales: FastApi",
             "type": "python",
             "request": "launch",
             "module": "uvicorn",

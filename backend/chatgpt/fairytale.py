@@ -1,21 +1,10 @@
 import openai
-from config.configuration import settings
-from fastapi import APIRouter
-from schemas.fairytale import FairyTaleSetup, FairyTaleStory
 
-router = APIRouter()
+from backend.config.configuration import settings
+from backend.schemas.fairytale import FairyTaleSetup, FairyTaleStory
 
 
-@router.get(path="/models")
-async def get_list_models():
-    openai.organization = settings.OPENAI_ORGID
-    openai.api_key = settings.OPENAI_TOKEN
-    models = openai.Model.list()
-    return models
-
-
-@router.get(path="/new", response_model=FairyTaleStory)
-async def create_new_fairytale(
+async def request_new_fairytale(
     hero: str = "Misha",
     trend: str = "mercy",
     language: str = "English"
