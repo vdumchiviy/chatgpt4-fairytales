@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+
+  backend:
+    image: vdumchiviy/fairytales_back_flask
+    # build: 
+    #   context: .
+    #   dockerfile: backend-flask.Dockerfile
+    container_name: "fairytales_backend"
+    labels:
+      description: "Backend"
+    ports:
+      - 8000:5000
+    environment:
+      - OPENAI_TOKEN=${OPENAI_TOKEN}
+      - OPENAI_ORGID=${OPENAI_ORGID}
+      - DEBUG=${DEBUG}
+

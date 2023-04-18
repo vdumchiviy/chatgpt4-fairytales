@@ -1,5 +1,4 @@
 from typing import Any, Dict
-
 from pydantic import BaseSettings, Field
 
 server_info: Dict[str, Any] = {
@@ -9,11 +8,9 @@ server_info: Dict[str, Any] = {
     "msg": "OK"
 }
 
-
 class Settings(BaseSettings):
-    OPENAI_TOKEN: str = Field(..., env="OPENAI_TOKEN")
-    OPENAI_ORGID: str = Field(..., env="OPENAI_ORGID")
-    DEBUG: bool = Field(..., env="DEBUG")
-
+    OPENAI_TOKEN: str
+    OPENAI_ORGID: str
+    DEBUG: bool = False
 
 settings = Settings()  # type: ignore[call-arg]

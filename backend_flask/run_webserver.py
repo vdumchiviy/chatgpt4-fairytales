@@ -13,5 +13,5 @@ CORS(
 app.register_blueprint(server, url_prefix='/server')
 app.register_blueprint(fairytale, url_prefix='/fairytale')
 
-if __name__ == 'main':
-    app.run()
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
