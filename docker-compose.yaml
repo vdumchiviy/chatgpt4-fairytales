@@ -4,6 +4,8 @@ services:
 
   backend:
     image: vdumchiviy/fairytales_back_flask
+    # command: "sh -c 'python ./backend_flask/run_webserver.py --host=0.0.0.0 --port=8000'"
+
     # build: 
     #   context: .
     #   dockerfile: backend-flask.Dockerfile
@@ -11,9 +13,25 @@ services:
     labels:
       description: "Backend"
     ports:
-      - 8000:5000
+      - 8000:8000
+      
     environment:
       - OPENAI_TOKEN=${OPENAI_TOKEN}
       - OPENAI_ORGID=${OPENAI_ORGID}
       - DEBUG=${DEBUG}
+    # command: "sh -c 'export FLASH_RUN_PORT=8000 && python ./backend_flask/run_webserver.py --host 0.0.0.0 --port 8000'"
+    command: "sh -c 'export FLASH_RUN_PORT=8000 && flask --app ./backend_flask/run_webserver.py run --host 0.0.0.0 --port 8000'"
+
+  frontend:
+    image: vdumchiviy/fairytales_front_react
+    container_name: "fairytales_frontend"
+    labels:
+      description: "Frontend"
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+
+
+# docker-compose -f docker-compose.yaml up  
 

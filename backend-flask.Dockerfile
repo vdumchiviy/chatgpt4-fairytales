@@ -9,12 +9,12 @@ RUN pip install -r requirements-back-flask.txt
 COPY ./backend_flask /backend_flask
 COPY ./backend /backend_flask/backend
 
-EXPOSE 5000
+EXPOSE 8000
 
 # CMD ["~/bash/sh"]
 # ENTRYPOINT ["python"]
 
-CMD ["python", "./backend_flask/run_webserver.py"]
+# CMD ["python", "./backend_flask/run_webserver.py"]
 # CMD ["gunicorn", "-w 4", "-b", "0.0.0.0:8000", "backend_flask.main:app"]
 # CMD ["uvicorn ./backend_flask/main:app --port 8080"]
 # docker build -t fairytales_back_flask:latest -f backend-flask.Dockerfile .
