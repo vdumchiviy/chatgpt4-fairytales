@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 
 from backend.chatgpt.fairytale import request_new_fairytale
 from backend.chatgpt.models import request_list_models
@@ -16,11 +16,10 @@ async def get_list_models():
 
 
 @fairytale.route("/new")
-async def get_new_fairytale(
-    hero: str = "Misha",
-    trend: str = "mercy",
-    language: str = "English"
-):
+async def get_new_fairytale():
+    hero: str = request.args.get("hero", default="Misha")
+    trend: str = request.args.get("trend", default="mercy")
+    language: str = request.args.get("language", default="English")
     # ) -> FairyTaleStory:
     result: FairyTaleStory = await request_new_fairytale(
         hero=hero,

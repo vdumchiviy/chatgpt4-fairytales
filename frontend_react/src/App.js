@@ -10,12 +10,14 @@ const headerData = {
   ]
 }
 
-const debug = true;
+// const debug = true;
 let apiAddress;
 
-if (debug) {
-  apiAddress = "http://127.0.0.1:8000"
-}
+// if (debug) {
+//   apiAddress = "http://127.0.0.1:8000"
+// }
+apiAddress = process.env.REACT_APP_ADDRESS + ":" + process.env.REACT_APP_BACKEND_PORT;
+
 function App() {
   return (
     <>

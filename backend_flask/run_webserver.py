@@ -7,7 +7,12 @@ app = Flask(__name__)
 CORS(
     app=app,
     resources=r"/*",
-    origins="http://localhost:3000",
+    origins=[
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://fairytales.kovtunfamily.ru",
+    "http://fairytales.kovtunfamily.ru:3000"
+    ],
     methods=["GET"]
 )
 app.register_blueprint(server, url_prefix='/server')
